@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ivy-module version="1.0">
+	<info organisation="org.codebox" module="javabeantester" status="integration" />
+	<configurations>
+		<conf name="default" description="Both runtime dependencies and master artifact form this conf."
+			extends="runtime,master" />
+		<conf name="master"
+			description="Contains only the artifact published by this module itself, with no transitive dependencies." />
+		<conf name="build" description="Contains dependencies only required for compile/build time." />
+		<conf name="runtime"
+			description="Contains dependencies that are not neccessarily required for building, but are for execution." />
+		<conf name="test"
+			description="Dependencies not required for normal use of the application, and are only available for test compilation and execution."
+			extends="runtime" />
+	</configurations>
+
+	<publications>
+		<artifact name="javabeantester" type="jar" conf="build,master" ext="jar" />
+	</publications>
+
+	<dependencies>
+		<dependency org="commons-lang" name="commons-lang" rev="2.6" conf="runtime->default(*)" />
+		<dependency org="junit" name="junit" rev="4.8.2" conf="test->default(*)" />
+		<dependency org="org.easymock" name="easymock" rev="3.2" conf="test->default" />
+		<dependency org="org.objenesis" name="objenesis" rev="1.3" conf="test->default" />
+		<dependency org="cglib" name="cglib-nodep" rev="2.2.2" conf="test->default" />
+	</dependencies>
+</ivy-module>
