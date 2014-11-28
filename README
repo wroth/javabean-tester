@@ -1,0 +1,39 @@
+JavaBeanTester -- Charles Roth's fork from Rob Dawson's original.
+2014-11-28
+
+JavaBeanTester is a stand-alone utility class that automatically tests
+the getter and setter methods for simple Java beans.
+
+There is an ongoing (if admittedly small) controversy over whether 
+one should write unit-tests for Java beans.  Writing such tests
+is often seen as a waste of time, or even 'gaming' code coverage.
+Yet beans are simple (if tedious) to test, and they can break, if
+only due to cut-and-paste errors.
+
+By providing a very simple, quick, and automatic way to write
+such tests, JavaBeanTester eliminates the debate.  Since it is
+trivial to use, take the 10 seconds to write the test call, and
+be done already(!) :-)
+
+This fork of Rob Dawnson's original provides:
+
+  1. A full Eclipse project with working code examples,
+     that should make it easier to see how to use JavaBeanTester.
+
+  2. Some minor changes to the JavaBeanTester class itself,
+     that allow for re-use across multiple projects, integration
+     with EasyMock, and additional standard classes (List's
+     and Map's) that the code "knows about".  (See the class header
+     comments for more details.)
+
+  3. This README!
+
+According to Rob, the original code was released under the MIT license.
+All of Charles' changes are likewise released under the same license.
+(See http://opensource.org/licenses/MIT)
+
+See also http://codebox.org.uk/pages/articles/unit-testing-javabeans
+for information about the original version.
+
+Charles' fork at https://github.com/wroth/javabean-tester, currently
+in the CharlesRoth branch.
